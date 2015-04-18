@@ -3,7 +3,7 @@ class Wine < ActiveRecord::Base
     "cabernet sauvignon", "syrah", "lambrusco",
     "sauvignon blanc" , "pinot noir"]
 
-  validates :varietal, :inclusion => { :in => VARIETALS },
+  validates :varietal, :inclusion => { :in => Wine::VARIETALS },
     if: "varietal.present?"
   validates :name, :year, :country, presence:  true
   validates :year, numericality: { only_integer: true,

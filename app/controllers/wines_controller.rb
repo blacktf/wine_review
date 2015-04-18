@@ -4,7 +4,7 @@ class WinesController < ApplicationController
     only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @wines = Wine.all
+    @wines = Wine.order(:name).page(params[:page])
   end
 
   def show
