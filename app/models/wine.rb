@@ -1,4 +1,7 @@
 class Wine < ActiveRecord::Base
+
+  has_many :log_entries, dependent: :destroy
+
   VARIETALS = ["merlot", "chianti", "chardonnay",
     "cabernet sauvignon", "syrah", "lambrusco",
     "sauvignon blanc" , "pinot noir"]

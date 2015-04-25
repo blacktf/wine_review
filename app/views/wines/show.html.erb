@@ -7,6 +7,11 @@
   <p><label>Winery:</label> <%= @wine.winery %></p>
   <p><label>Country:</label> <%= @wine.country %></p>
   <p><label>Varietal:</label> <%= @wine.varietal %></p>
+  <p>
+    Read all log
+    <%= link_to pluralize(@wine.log_entries.size, 'entry'),
+      wine_log_entries_path(@wine) %>
+  </p>
 </article>
 
 <%= link_to 'Edit', edit_wine_path(@wine) %>
